@@ -23,27 +23,27 @@ public class TransactionController {
 	@Autowired
 	TransactionService transactionService;
 	
-	@GetMapping()
+	@GetMapping("/list")
     public Flux<Transaction> findAll(){
         return transactionService.findAll();
     }
 
-    @PostMapping()
+    @PostMapping("/save")
     public Mono<Transaction> save(@RequestBody Transaction t){
         return transactionService.save(t);
     }
 
-    @PutMapping()
+    @PutMapping("/update")
     public Mono<Transaction> update(@RequestBody Transaction p){
         return transactionService.update(p);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/findBy/{id}")
     public Mono<Transaction> findById(@PathVariable("id") String id){
         return transactionService.getId(id);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/delete/{id}")
     public Mono<Void> delete(@PathVariable("id") String id){
         return transactionService.delete(id);
     }

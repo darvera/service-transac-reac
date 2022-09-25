@@ -1,0 +1,3 @@
+[submodule "service-transac-reac"]
+	path = service-transac-reac
+	url = https://github.com/darvera/service-transac-reac

@@ -1,0 +1,16 @@
+#Sprints Data
+#spring.data.mongodb.uri=mongodb+srv://williammq:testBC34@test.zoqpces.mongodb.net/?retryWrites=true&w=majority
+#spring.data.mongodb.database=bankproduct
+
+
+spring:
+  application:
+    name: serviceclient  # en el file pom.xml deber ser <artifactId>serv-client</artifactId>
+  profiles:
+    active: dev         # si no estable un perfil lo tomara por defecto el perfil "default"
+    #lo tomara dev [demo-client1.yml --> http://localhost:8881/demo-client1/dev]
+  cloud:
+    config:
+      uri: http://localhost:8888 # 8881 redirection to port 8888 inmutable, go to "config server"
+      enabled: true
+
